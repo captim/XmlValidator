@@ -5,18 +5,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.List;
 
-@XmlRootElement
+@XmlRootElement(name="group")
 public class Group {
     private List<Student> students = new ArrayList<>();
-    @XmlElement(name="student")
-    public void setStudent(Student student) {
-        students.add(student);
+    public List<Student> getStudents() {
+        return students;
     }
-
-    @Override
-    public String toString() {
-        return "Group{" +
-                "students=" + students +
-                '}';
+    @XmlElement(name="student")
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 }

@@ -35,28 +35,18 @@ public class Student {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
-
-    @XmlElement(name="subject")
-    public void setSubject(Subject subject) {
-        subjects.add(subject);
+    public List<Subject> getSubjects() {
+        return subjects;
     }
-
+    @XmlElement(name="subject")
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
+    }
     public float getAverage() {
         return average;
     }
     @XmlElement(name="average")
     public void setAverage(float average) {
         this.average = average;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", LastName='" + LastName + '\'' +
-                ", groupId='" + groupId + '\'' +
-                ", subjects=" + subjects +
-                ", average=" + average +
-                '}';
     }
 }
